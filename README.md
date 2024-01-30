@@ -10,19 +10,19 @@ Xiaohu Huang, Hao Zhou, Kun Yao, Kai Han
 
 In this paper, we introduce FROSTER, an effective framework for open-vocabulary action recognition. The overall pipeline of FROSTER consists of two key components, namely, model finetuning to bridge the gap between image and video tasks, and knowledge distillation to maintain the generalizability of the pretrained CLIP.
 
-<div align=center>
-  <img src='figures/method.png style="width:90%"'>
+<div class="col-sm-12" align=center>
+  <img src='figures/method.png' width="90%" height="90%">
 </div>
 
 # Performance
 We conduct experiments on two open-vocabulary settings, i.e., base-to-novel and cross-dataset. FROSTER achieves state-of-the-art performance on both the two benchmarks.
 
 <div align=center>
-  <img src='figures/base-to-novel.png style="width:90%"'>
+  <img src='figures/base-to-novel.png' width="90%" height="90%">
 </div>
 
 <div align=center>
-  <img src='figures/cross-dataset.png style="width:90%"'>
+  <img src='figures/cross-dataset.png' width="90%" height="90%">
 </div>
 
 # Dependency
