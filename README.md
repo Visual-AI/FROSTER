@@ -19,6 +19,9 @@ In this paper, we introduce FROSTER, an effective framework for open-vocabulary 
 We conduct experiments on two open-vocabulary settings, i.e., base-to-novel and cross-dataset. FROSTER achieves state-of-the-art performance on both the two benchmarks.
 
 <table>
+ <caption>
+  Table 1: Performance comparison (Top1-Acc (%)) with the CLIP-based methods using ViT-B/16 under the base-to-novel evaluation setting. "HM" denotes the harmonic mean of the accuracy from the base and novel sets. The results of most other papers are taken from Open-VCLIP and ViFiCLIP. † denotes the results with our implementation. The best results are bolded, and the second-best results are underlined.
+ </caption>
     <tr>
         <th>Method</th>
         <th colspan='3'>K-400</th>
@@ -183,7 +186,7 @@ Table 2: Performance comparison (Top1-Acc (%)) with the previous approaches unde
 <div align="center">
  
 | Method | UCF* | UCF | HMDB* | HMDB | K-600 |
-| :--- | :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: | :---: | :---: |
 | **ER-ZASR** | - | $51.8 \pm 2.9$ | - | $35.3 \pm 4.6$ | $42.1 \pm 1.4$ |
 | **Frozen CLIP** † | $74.2$ | $73.8 \pm 0.6$ | $46.3$ | $47.9 \pm 0.5$ | $68.1 \pm 1.1$ |
 | **ActionCLIP** † | $77.4$ | $77.5 \pm 0.8$ | $48.0$ | $48.2 \pm 1.5$ | $62.5 \pm 1.2$ |
