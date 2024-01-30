@@ -19,12 +19,44 @@ In this paper, we introduce FROSTER, an effective framework for open-vocabulary 
 We conduct experiments on two open-vocabulary settings, i.e., base-to-novel and cross-dataset. FROSTER achieves state-of-the-art performance on both the two benchmarks.
 
 <div align=center>
-  <img src='figures/base-to-novel.png' width="90%" height="90%">
+ 
+Table 1: Performance comparison (Top1-Acc (%)) with the CLIP-based methods using ViT-B/16 under the base-to-novel evaluation setting. "HM" denotes the harmonic mean of the accuracy from the base and novel sets. The results of most other papers are taken from Open-VCLIP and ViFi-CLIP. † denotes the results of our implementation. The best results are bolded, and the second best results are $\underline{underlined}$.
+| Method | K-400 |  |  | HMDB-51 |  |  | UCF-101 |  |  | SSv2 |  |  |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  | Base | Novel | HM |Base | Novel | HM | Base | Novel | HM | Base | Novel | IMM |
+| FrozenCLIP | $62.3$ | $53.4$ | $57.5$ | $53.3$ | $46.8$ | $49.8$ | $78.5$ | $63.6$ | $70.3$ | $4.9$ | $5.3$ | $5.1$ |
+| ActionCLIP | $61.0$ | $46.2$ | $52.6$ | $69.1$ | $37.3$ | $48.5$ | $90.1$ | $58.1$ | $70.7$ | $13.3$ | $10.1$ | $11.5$ |
+| XCLIP | $74.1$ | $56.4$ | $64.0$ | $69.4$ | $45.5$ | $55.0$ | $89.9$ | $58.9$ | $71.2$ | $8.5$ | $6.6$ | $7.4$ |
+| VPT | $69.7$ | $37.6$ | $48.8$ | $46.2$ | $16.0$ | $23.8$ | $90.5$ | $40.4$ | $55.8$ | $8.3$ | $5.3$ | $6.4$ |
+| AIM † | $74.6$ | $62.5$ | $68.0$ | $64.0$ | $51.6$ | $57.1$ | $89.8$ | $76.4$ | $82.6$ | $8.5$ | $7.9$ | $8.2$ |
+| ST-Adapter † | $73.6$ | $62.0$ | $67.3$ | $65.3$ | $48.9$ | $55.9$ | $85.5$ | $76.8$ | $80.9$ | $9.3$ | $8.4$ | $8.8$ |
+| ViFi-CLIP | $76.4$ | $61.1$ | $67.9$ | $\underline{73.8}$ | $\underline{53.3}$ | $\underline{61.9}$ | $92.9$ | $67.7$ | $78.3$ | $\underline{16.2}$ | $\underline{12.1}$ | $\underline{13.9}$ |
+| OpenVCLIP | $\underline{76.5}$ | $\underline{62.6}$ | $\underline{68.9}$ | $70.3$ | $50.4$ | $58.7$ | $\underline{94.8}$ | $\underline{77.5}$ | $\underline{85.3}$ | $16.0$ | $11.0$ | ${13.0}$ |
+| FROSTER | $\mathbf{77.8}$ | $\mathbf{64.3}$ | $\mathbf{70.4}$ | $\mathbf{74.1}$ | $\mathbf{58.0}$ | $\mathbf{65.1}$ | $\mathbf{95.3}$ | $\mathbf{80.0}$ | $\mathbf{\mathbf{87.0}}$ | $\mathbf{18.3}$ | $\mathbf{12.2}$ | $\mathbf{14.6}$ |
+  
 </div>
 
-<div align=center>
-  <img src='figures/cross-dataset.png' width="90%" height="90%">
+Table 2: Performance comparison (Top1-Acc (%)) with the previous approaches under the cross-dataset evaluation protocol. All methods are based on CLIP ViT-B/16, except for ER-ZASR (TSM pre-trained on ImageNet-1k) and Text4Vis (ViT-L/14). UCF* and HMDB* indicate evaluating the full validation set, while UCF and HMDB denote evaluating across the three validation splits. The results of most other papers are taken from Open-VCLIP and ViFi-CLIP. † denotes the results are produced with our implementation.
+
+<div align="center">
+ 
+| Method | UCF* | UCF | HMDB* | HMDB | K-600 |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| ER-ZASR | - | $51.8 \pm 2.9$ | - | $35.3 \pm 4.6$ | $42.1 \pm 1.4$ |
+| Frozen CLIP † | $74.2$ | $73.8 \pm 0.6$ | $46.3$ | $47.9 \pm 0.5$ | $68.1 \pm 1.1$ |
+| ActionCLIP † | $77.4$ | $77.5 \pm 0.8$ | $48.0$ | $48.2 \pm 1.5$ | $62.5 \pm 1.2$ |
+| X-CLIP | - | $72.0 \pm 2.3$ | - | $44.6 \pm 5.2$ | $65.2 \pm 0.4$ |
+| VPT | - | $69.3 \pm 4.2$ | - | $44.3 \pm 2.2$ | $55.8 \pm 0.7$ |
+| Text4Vis| $79.6$ | - | $49.8$ | - | $68.9 \pm 1.0$ |
+| AIM †| $79.0$ | $79.4 \pm 1.0$ | $49.5$ | $50.3 \pm 0.8$ | $66.7 \pm 0.5$ |
+| ST-Adapter †| $77.9$ | $77.6 \pm 0.7$ | $50.3$ | $51.1 \pm 0.6$ | $60.2 \pm 1.8$ |
+| Vita-CLIP | - | $75.0 \pm 0.6$ | - | $48.6 \pm 0.6$ | $67.4 \pm 0.5$ |
+| ViFi-CLIP | - | $76.8 \pm 0.7$ | - | $51.3 \pm 0.6$ | $71.2 \pm 1.0$ |
+| Open-VCLIP | $\underline{83.5}$ | $\underline{83.4} \pm 1.2$ | $\underline{53.2}$ | $\underline{53.9} \pm 1.2$ | $\underline{73.0} \pm 0.8$ |
+| FROSTER | $\mathbf{85.0}$ | $\mathbf{84.8} \pm 1.1$ | $\mathbf{54.5}$ | $\mathbf{54.8} \pm 1.3$ | $\mathbf{74.8} \pm 0.9$ |
+
 </div>
+
 
 # Dependency
 
