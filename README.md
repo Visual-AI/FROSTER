@@ -15,6 +15,7 @@ In this paper, we introduce FROSTER, an effective framework for open-vocabulary 
 </div>
 
 # Performance
+
 We conduct experiments on two open-vocabulary settings, i.e., base-to-novel and cross-dataset. FROSTER achieves state-of-the-art performance on both the two benchmarks.
 
 <div align=center>
@@ -117,6 +118,7 @@ TORCH_DISTRIBUTED_DEBUG=INFO python -W ignore -u tools/run_net.py \
 ```
 
 - **Cross-Dataset Setting**
+
 The training script is also in the **script/training/temporal_b16** folder. 
 Please use `train_clip.sh` for the training on K400, where you also need to modify the `ROOT`, `CKPT`, `DATA.PATH_TO_DATA_DIR`, `DATA.PATH_PREFIX`, `DATA.INDEX_LABEL_MAPPING_FILE`  variables to fit the paths on your server. 
 
@@ -131,6 +133,7 @@ python weight_average_tool.py
 # Evaluation
 
 - **Base-to-Novel Setting**
+  
 Please use `hmdb_clip_B2N.sh`, `k400_clip_B2N.sh`, `ssv2_clip_B2N.sh` and `ucf_clip_B2N.sh` for the evaluation on HMDB51, K400, SSV2, and UCF101, respectively, where you need to modify the `ROOT`, `CKPT`, `DATA.PATH_TO_DATA_DIR`, `DATA.PATH_PREFIX`, `DATA.INDEX_LABEL_MAPPING_FILE` and `LOAD_CKPT_FILE`  variables to fit the paths on your server.
 
 Below is the evaluation script for k400 dataset.
@@ -180,6 +183,7 @@ python -W ignore -u tools/run_net.py \
 ```
 
 - **Cross-Dataset Setting**
+
 Please use `hmdb_clip.sh`, `ucf_clip.sh`, and `k600_clip.sh` for the evaluation on HMDB51, UCF101, and K600, respectively, where you need to modify the `ROOT`, `CKPT`, `DATA.PATH_TO_DATA_DIR`, `DATA.PATH_PREFIX`, `DATA.INDEX_LABEL_MAPPING_FILE` and `LOAD_CKPT_FILE`  variables to fit the paths on your server.
 
 # Acknowledgement
