@@ -213,11 +213,9 @@ Detailed Installation instruction can be viewed in [`INSTALL.md`](https://github
 
 - **Kinetics-400.** 
 
-  We obtained the compressed version Kinetics-400 dataset, where videos have been resized to 256, from the [`VoV3d Repo`](https://github.com/youngwanLEE/VoV3D/blob/main/DATA.md#kinetics- 
-  400). The repository  provides the download link for the dataset:  [[`Kinetics-400 dataset link`](https://dl.dropbox.com/s/419u0zljf2brsbt/compress.tar.gz)]. After downloading and 
+  We obtained the compressed version Kinetics-400 dataset, where videos have been resized to 256, from the [`VoV3d Repo`](https://github.com/youngwanLEE/VoV3D/blob/main/DATA.md#kinetics-400). The repository  provides the download link for the dataset:  [`Kinetics-400 dataset link`](https://dl.dropbox.com/s/419u0zljf2brsbt/compress.tar.gz). After downloading and 
   extracting the data, you should rename the folders "train_256" and "val_256" to "train" and "val" respectively. Additionally, please note that the video "val/crossing_river/ZVdAl- 
-  yh9m0.mp4" is invalid and needs to be replaced. You should download a new version of the video from [`here`](https://drive.google.com/file/d/15M07kKQlZEoVzUezppITSnICs83fch8A/view? 
-  usp=share_link) and perform the replacement.
+  yh9m0.mp4" is invalid and needs to be replaced. You should download a new version of the video from [`here`](https://drive.google.com/file/d/15M07kKQlZEoVzUezppITSnICs83fch8A/view?usp=share_link) and perform the replacement.
 
 - **UCF-101.**
 
@@ -369,7 +367,7 @@ This repository is built upon [`OpenVCLIP`](https://github.com/wengzejia1/Open-V
 
 # Citation
 
-```
+```bibtex
 @inproceedings{
   huang2024froster,
   title={FROSTER: Frozen CLIP is a Strong Teacher for Open-Vocabulary Action Recognition},
