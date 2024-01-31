@@ -8,7 +8,6 @@ Xiaohu Huang, Hao Zhou, Kun Yao, Kai Han
 
 # Introduction
 
-
 https://github.com/Visual-AI/FROSTER/assets/32011994/9f639923-864c-4b61-a8cb-1542abddce39
 
 
