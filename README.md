@@ -317,7 +317,7 @@ ROOT=PATH_TO_FROSTER_WORKSPACE
 CKPT=PATH_TO_FROSTER_WORKSPACE
 
 OUT_DIR=$CKPT/testing
-OAD_CKPT_FILE=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/basetraining/B2N_k400_froster/wa_checkpoints/swa_2_22.pth
+OAD_CKPT_FILE=$ROOT/basetraining/B2N_k400_froster/wa_checkpoints/swa_2_22.pth
 
 # TRAIN_FILE can be set as train_1.csv or train_2.csv or train_3.csv;
 # TEST_FILE can be set as val.csv (base set) or test.csv (novel set).

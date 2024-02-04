@@ -1,7 +1,7 @@
-ROOT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/
-CKPT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/basetraining/froster
+ROOT=PATH_TO_FROSTER_WORKSPACE/
+CKPT=PATH_TO_FROSTER_WORKSPACE/basetraining/froster
 OUT_DIR=$CKPT/testing
-LOAD_CKPT_FILE=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/basetraining/froster/wa_checkpoints/swa_2_22.pth
+LOAD_CKPT_FILE=$ROOT/basetraining/froster/wa_checkpoints/swa_2_22.pth
 
 hmdb_file=hmdb_full
 TRAIN_FILE=train.csv
@@ -13,12 +13,12 @@ cd $ROOT
 python -W ignore -u tools/run_net.py \
     --cfg configs/Kinetics/TemporalCLIP_vitb16_8x16_STAdapter.yaml \
     --opts DATA.PATH_TO_DATA_DIR $ROOT/zs_label_db/$hmdb_file \
-    DATA.PATH_PREFIX /root/paddlejob/workspace/env_run/output/xiaohu/data/hmdb51_test \
+    DATA.PATH_PREFIX $ROOT/hmdb51_test \
     DATA.PATH_LABEL_SEPARATOR , \
     TRAIN_FILE $TRAIN_FILE \
     VAL_FILE $VAL_FILE \
     TEST_FILE $TEST_FILE \
-    DATA.INDEX_LABEL_MAPPING_FILE /root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/label_rephrase/hmdb_rephrased_classes.json \
+    DATA.INDEX_LABEL_MAPPING_FILE $ROOT/label_rephrase/hmdb_rephrased_classes.json \
     TRAIN.ENABLE False \
     OUTPUT_DIR $OUT_DIR \
     TEST.BATCH_SIZE 480 \

@@ -2,7 +2,7 @@ import os
 train_list_path = 'val_1.csv'
 dst_path = 'val.csv'
 
-dataset_path = '/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/ucf101'
+dataset_path = '$ROOT/ucf101'
 
 f = open(train_list_path)
 f_w = open(dst_path, 'w')

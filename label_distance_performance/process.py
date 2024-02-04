@@ -1,10 +1,10 @@
-class_name_path_k400 = '/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/label_rephrase/k400_rephrased_classes.json'
-class_name_path_ucf = '/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/label_rephrase/ucf101_rephrased_classes.json'
-class_name_path_hmdb = '/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/label_rephrase/hmdb_rephrased_classes.json'
+class_name_path_k400 = '$ROOT/label_rephrase/k400_rephrased_classes.json'
+class_name_path_ucf = '$ROOT/label_rephrase/ucf101_rephrased_classes.json'
+class_name_path_hmdb = '$ROOT/label_rephrase/hmdb_rephrased_classes.json'
 
-class_name_path_k600_1 = '/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/label_rephrase/k600_split1_rephrased_classes.json'
-class_name_path_k600_2 = '/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/label_rephrase/k600_split2_rephrased_classes.json'
-class_name_path_k600_3 = '/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/label_rephrase/k600_split3_rephrased_classes.json'
+class_name_path_k600_1 = '$ROOT/label_rephrase/k600_split1_rephrased_classes.json'
+class_name_path_k600_2 = '$ROOT/label_rephrase/k600_split2_rephrased_classes.json'
+class_name_path_k600_3 = '$ROOT/label_rephrase/k600_split3_rephrased_classes.json'
 
 finetuned_performance_file_path_ucf =''
 ensemble_performance_file_path_ucf = ''

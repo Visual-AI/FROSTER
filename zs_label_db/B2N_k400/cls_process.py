@@ -1,5 +1,5 @@
 import json
-original_rephrase_path = '/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/label_rephrase/k400_rephrased_classes.json'
+original_rephrase_path = '$ROOT/label_rephrase/k400_rephrased_classes.json'
 input_path = 'train_idx2cls.csv'
 output_path = 'train_idx2cls.json'
 

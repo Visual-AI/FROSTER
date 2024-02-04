@@ -6,7 +6,7 @@ f = open(train_list_path)
 f_w = open(dst_path, 'w')
 
 vid2path = {}
-dataset_path = '/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/k400/train'
+dataset_path = '$ROOT/k400/train'
 
 class_list = os.listdir(dataset_path)
 for cls in class_list:
@@ -15,7 +15,7 @@ for cls in class_list:
     for vid in videos:
         vid2path[vid] = os.path.join(cls, vid)
 
-# dataset_path_1 = '/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/k400/val'
+# dataset_path_1 = '$ROOT/k400/val'
 # class_list = os.listdir(dataset_path_1)
 # for cls in class_list:
 #     cls_path = os.path.join(dataset_path_1, cls)

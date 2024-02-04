@@ -1,7 +1,7 @@
-ROOT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER
-CKPT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/ckpt/basetraining/B2N_ucf101_froster
+ROOT=PATH_TO_FROSTER_WORKSPACE
+CKPT=PATH_TO_FROSTER_WORKSPACE/ckpt/basetraining/B2N_ucf101_froster
 OUT_DIR=$CKPT/testing
-LOAD_CKPT_FILE=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/basetraining/B2N_ucf101_froster/wa_checkpoints/swa_2_22.pth
+LOAD_CKPT_FILE=$ROOT/basetraining/B2N_ucf101_froster/wa_checkpoints/swa_2_22.pth
 
 # TEST_FILE can be set as val.csv (base set) or test.csv (novel set).
 # rephrased_file can be set as train_rephrased.json (base set) or test_rephrased.json (novel set)
@@ -21,9 +21,9 @@ python -W ignore -u tools/run_net.py \
     TRAIN_FILE $TRAIN_FILE \
     VAL_FILE $VAL_FILE \
     TEST_FILE $TEST_FILE \
-    DATA.PATH_PREFIX /root/paddlejob/workspace/env_run/output/xiaohu/data/ucf101 \
+    DATA.PATH_PREFIX $ROOT/ucf101 \
     DATA.PATH_LABEL_SEPARATOR , \
-    DATA.INDEX_LABEL_MAPPING_FILE /root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/zs_label_db/$B2N_ucf_file/$rephrased_file \
+    DATA.INDEX_LABEL_MAPPING_FILE $ROOT/zs_label_db/$B2N_ucf_file/$rephrased_file \
     TRAIN.ENABLE False \
     OUTPUT_DIR $OUT_DIR \
     TEST.BATCH_SIZE 480 \

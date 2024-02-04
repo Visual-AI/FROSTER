@@ -1,5 +1,5 @@
-ROOT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER
-CKPT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER
+ROOT=PATH_TO_FROSTER_WORKSPACE
+CKPT=PATH_TO_FROSTER_WORKSPACE
 
 # TRAIN_FILE can be set as train_1.csv or train_2.csv or train_3.csv;
 
@@ -13,12 +13,12 @@ cd $ROOT
 TORCH_DISTRIBUTED_DEBUG=INFO python -W ignore -u tools/run_net.py \
   --cfg configs/Kinetics/TemporalCLIP_vitb16_8x16_STAdapter_HMDB51.yaml \
   --opts DATA.PATH_TO_DATA_DIR $ROOT/zs_label_db/$B2N_hmdb_file \
-  DATA.PATH_PREFIX /root/paddlejob/workspace/env_run/output/xiaohu/data/hmdb51_test \
+  DATA.PATH_PREFIX $ROOT/hmdb51_test \
   TRAIN_FILE $TRAIN_FILE \
   VAL_FILE $VAL_FILE \
   TEST_FILE $TEST_FILE \
   DATA.PATH_LABEL_SEPARATOR , \
-  DATA.INDEX_LABEL_MAPPING_FILE /root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/zs_label_db/B2N_hmdb/train_rephrased.json \
+  DATA.INDEX_LABEL_MAPPING_FILE $ROOT/zs_label_db/B2N_hmdb/train_rephrased.json \
   TRAIN.ENABLE True \
   OUTPUT_DIR $CKPT/basetraining/B2N_hmdb51_froster \
   TRAIN.BATCH_SIZE 32 \

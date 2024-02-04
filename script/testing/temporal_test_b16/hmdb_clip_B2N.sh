@@ -1,7 +1,7 @@
-ROOT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER
-CKPT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/ckpt/basetraining/B2N_hmdb51_froster
+ROOT=PATH_TO_FROSTER_WORKSPACE
+CKPT=PATH_TO_FROSTER_WORKSPACE/ckpt/basetraining/B2N_hmdb51_froster
 OUT_DIR=$CKPT/testing
-LOAD_CKPT_FILE=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/basetraining/B2N_hmdb51_froster/wa_checkpoints/swa_2_22.pth
+LOAD_CKPT_FILE=$ROOT/basetraining/B2N_hmdb51_froster/wa_checkpoints/swa_2_22.pth
 
 # TEST_FILE can be set as val.csv (base set) or test.csv (novel set).
 # rephrased_file can be set as train_rephrased.json (base set) or test_rephrased.json (novel set)
@@ -20,12 +20,12 @@ cd $ROOT
 TORCH_DISTRIBUTED_DEBUG=INFO python -W ignore -u tools/run_net.py \
     --cfg configs/Kinetics/TemporalCLIP_vitb16_8x16_STAdapter_HMDB51.yaml \
     --opts DATA.PATH_TO_DATA_DIR $ROOT/zs_label_db/$B2N_hmdb_file \
-    DATA.PATH_PREFIX /root/paddlejob/workspace/env_run/output/xiaohu/data/hmdb51_test \
+    DATA.PATH_PREFIX $ROOT/hmdb51_test \
     TRAIN_FILE $TRAIN_FILE \
     VAL_FILE $VAL_FILE \
     TEST_FILE $TEST_FILE \
     DATA.PATH_LABEL_SEPARATOR , \
-    DATA.INDEX_LABEL_MAPPING_FILE /root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/zs_label_db/B2N_hmdb/$rephrased_file \
+    DATA.INDEX_LABEL_MAPPING_FILE $ROOT/zs_label_db/B2N_hmdb/$rephrased_file \
     TRAIN.ENABLE False \
     OUTPUT_DIR $OUT_DIR \
     TEST.BATCH_SIZE 480 \

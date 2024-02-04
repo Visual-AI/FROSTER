@@ -1,5 +1,5 @@
-ROOT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER
-CKPT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER
+ROOT=PATH_TO_FROSTER_WORKSPACE
+CKPT=PATH_TO_FROSTER_WORKSPACE
 
 # TRAIN_FILE can be set as train_1.csv or train_2.csv or train_3.csv;
 
@@ -13,7 +13,7 @@ cd $ROOT
 TORCH_DISTRIBUTED_DEBUG=INFO python -W ignore -u tools/run_net.py \
   --cfg configs/Kinetics/TemporalCLIP_vitb16_8x16_STAdapter_UCF101.yaml \
   --opts DATA.PATH_TO_DATA_DIR $ROOT/zs_label_db/$B2N_ucf_file \
-  DATA.PATH_PREFIX /root/paddlejob/workspace/env_run/output/xiaohu/data/ucf101 \
+  DATA.PATH_PREFIX $ROOT/ucf101 \
   TRAIN_FILE $TRAIN_FILE \
   VAL_FILE $VAL_FILE \
   TEST_FILE $TEST_FILE \

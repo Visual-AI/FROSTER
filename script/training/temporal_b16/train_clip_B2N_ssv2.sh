@@ -1,5 +1,5 @@
-ROOT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER
-CKPT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER
+ROOT=PATH_TO_FROSTER_WORKSPACE
+CKPT=PATH_TO_FROSTER_WORKSPACE
 
 B2N_ssv2_file=B2N_ssv2
 TRAIN_FILE=train.csv
@@ -14,9 +14,9 @@ TORCH_DISTRIBUTED_DEBUG=INFO python -W ignore -u tools/run_net.py \
   TRAIN_FILE $TRAIN_FILE \
   VAL_FILE $VAL_FILE \
   TEST_FILE $TEST_FILE \
-  DATA.PATH_PREFIX /root/paddlejob/workspace/env_run/output/xiaohu/data/ssv2 \
+  DATA.PATH_PREFIX $ROOT/ssv2 \
   DATA.PATH_LABEL_SEPARATOR , \
-  DATA.INDEX_LABEL_MAPPING_FILE /root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/zs_label_db/B2N_ssv2/train_rephrased.json \
+  DATA.INDEX_LABEL_MAPPING_FILE $ROOT/zs_label_db/B2N_ssv2/train_rephrased.json \
   TRAIN.ENABLE True \
   OUTPUT_DIR $CKPT/basetraining/B2N_ssv2_froster \
   TRAIN.BATCH_SIZE 32 \

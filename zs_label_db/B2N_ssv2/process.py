@@ -2,7 +2,7 @@ import os
 train_list_path = 'test_1.csv'
 dst_path = 'test.csv'
 
-dataset_path = '/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/ssv2'
+dataset_path = '$ROOT/ssv2'
 
 f = open(train_list_path)
 f_w = open(dst_path, 'w')
