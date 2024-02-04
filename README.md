@@ -1,6 +1,6 @@
 # FROSTER: Frozen CLIP is a Strong Teacher for Open-vocabulary Action Recognition
 
-**This repository is the official implementation of ICLR2024 paper:"FROSTER: Frozen CLIP is a Strong Teacher for Open-vocabulary Action Recognition"**
+**This repository is the official implementation of the ICLR2024 paper: "FROSTER: Frozen CLIP is a Strong Teacher for Open-vocabulary Action Recognition"**
 
 Xiaohu Huang, Hao Zhou, Kun Yao, Kai Han
 
@@ -11,7 +11,7 @@ Xiaohu Huang, Hao Zhou, Kun Yao, Kai Han
 https://github.com/Visual-AI/FROSTER/assets/32011994/9f639923-864c-4b61-a8cb-1542abddce39
 
 
-In this paper, we introduce FROSTER, an effective framework for open-vocabulary action recognition. The overall pipeline of FROSTER consists of two key components, namely, model finetuning to bridge the gap between image and video tasks, and knowledge distillation to maintain the generalizability of the pretrained CLIP.
+This paper introduces FROSTER, an effective framework for open-vocabulary action recognition. The overall pipeline of FROSTER consists of two key components, namely, model finetuning to bridge the gap between image and video tasks, and knowledge distillation to maintain the generalizability of the pretrained CLIP.
 
 # Performance
 
@@ -180,7 +180,7 @@ We conduct experiments on two open-vocabulary settings, i.e., base-to-novel and 
     </tr>
 </table>
 
-Table 2: Performance comparison (Top1-Acc (%)) with the previous approaches under the cross-dataset evaluation protocol. All methods are based on CLIP ViT-B/16, except for ER-ZASR (TSM pre-trained on ImageNet-1k) and Text4Vis (ViT-L/14). UCF* and HMDB* indicate evaluating the full validation set, while UCF and HMDB denote evaluating across the three validation splits. The results of most other papers are taken from Open-VCLIP and ViFi-CLIP. † denotes the results are produced with our implementation.
+Table 2: Performance comparison (Top1-Acc (%)) with the previous approaches under the cross-dataset evaluation protocol. All methods are based on CLIP ViT-B/16, except for ER-ZASR (TSM pre-trained on ImageNet-1k) and Text4Vis (ViT-L/14). UCF* and HMDB* indicate evaluating the full validation set, while UCF and HMDB denote evaluating across the three validation splits. The results of most other papers are taken from Open-VCLIP and ViFi-CLIP. † denotes the results produced with our implementation.
 
 <div align="center">
  
@@ -206,7 +206,7 @@ Table 2: Performance comparison (Top1-Acc (%)) with the previous approaches unde
 
 The main dependent packages include: PyTorch 1.11.0 and torchvision 0.12.0 and [`PySlowFast`](https://github.com/facebookresearch/SlowFast)
 
-Detailed Installation instruction can be viewed in [`INSTALL.md`](https://github.com/VisAILab/froster/blob/main/INSTALL.md).
+Detailed Installation instructions can be viewed in [`INSTALL.md`](https://github.com/VisAILab/froster/blob/main/INSTALL.md).
 
 # Data Preparation
 
@@ -222,11 +222,11 @@ Detailed Installation instruction can be viewed in [`INSTALL.md`](https://github
 
 - **HMDB-51.**
 
-  We donwload HMDB-51 dataset by the [`script`](https://github.com/open-mmlab/mmaction2/blob/main/tools/data/hmdb51/download_videos.sh) provided by MMAction2.
+  We download the HMDB-51 dataset by the [`script`](https://github.com/open-mmlab/mmaction2/blob/main/tools/data/hmdb51/download_videos.sh) provided by MMAction2.
 
 - **Kinetics-600 testing.**
 
-  Validation data of Kinetics-600 we used can be donwloaded from [`link`](https://pan.baidu.com/s/1d6wI-n3igMdE1rJ2xP2MsA?pwd=c5mu ).
+  The validation data of Kinetics-600 we used can be downloaded from [`link`](https://pan.baidu.com/s/1d6wI-n3igMdE1rJ2xP2MsA?pwd=c5mu ).
 
 # Checkpoint
 
@@ -241,8 +241,8 @@ Please use `train_clip_B2N_hmdb.sh`, `train_clip_B2N_k400.sh`, `train_clip_B2N_s
 Below is the training script on k400, where you need to modify the `ROOT`, `CKPT`, `DATA.PATH_TO_DATA_DIR`, `DATA.PATH_PREFIX`, `DATA.INDEX_LABEL_MAPPING_FILE`  variables to fit the paths on your server. 
 
 ```bash
-ROOT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER
-CKPT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER
+ROOT=PATH_TO_FROSTER_WORKSPACE
+CKPT=PATH_TO_FROSTER_WORKSPACE
 
 # TRAIN_FILE can be set as train_1.csv or train_2.csv or train_3.csv;
 
@@ -259,9 +259,9 @@ TORCH_DISTRIBUTED_DEBUG=INFO python -W ignore -u tools/run_net.py \
   TRAIN_FILE $TRAIN_FILE \
   VAL_FILE $VAL_FILE \
   TEST_FILE $TEST_FILE \
-  DATA.PATH_PREFIX /root/paddlejob/workspace/env_run/output/xiaohu/data/k400 \
+  DATA.PATH_PREFIX $ROOT/data/k400 \
   DATA.PATH_LABEL_SEPARATOR , \
-  DATA.INDEX_LABEL_MAPPING_FILE /root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/zs_label_db/$B2N_k400_file/train_rephrased.json \
+  DATA.INDEX_LABEL_MAPPING_FILE $ROOT/zs_label_db/$B2N_k400_file/train_rephrased.json \
   TRAIN.ENABLE True \
   OUTPUT_DIR $CKPT/basetraining/B2N_k400_froster \
   TRAIN.BATCH_SIZE 32 \
@@ -313,8 +313,8 @@ Please use `hmdb_clip_B2N.sh`, `k400_clip_B2N.sh`, `ssv2_clip_B2N.sh` and `ucf_c
 Below is the evaluation script for k400 dataset.
 
 ```bash
-ROOT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER
-CKPT=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/basetraining/B2N_k400_froster
+ROOT=PATH_TO_FROSTER_WORKSPACE
+CKPT=PATH_TO_FROSTER_WORKSPACE
 
 OUT_DIR=$CKPT/testing
 OAD_CKPT_FILE=/root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/basetraining/B2N_k400_froster/wa_checkpoints/swa_2_22.pth
@@ -336,9 +336,9 @@ python -W ignore -u tools/run_net.py \
     TRAIN_FILE $TRAIN_FILE \
     VAL_FILE $VAL_FILE \
     TEST_FILE $TEST_FILE \
-    DATA.PATH_PREFIX /root/paddlejob/workspace/env_run/output/xiaohu/data/k400 \
+    DATA.PATH_PREFIX $ROOT/data/k400 \
     DATA.PATH_LABEL_SEPARATOR , \
-    DATA.INDEX_LABEL_MAPPING_FILE /root/paddlejob/workspace/env_run/output/xiaohu/FROSTER/zs_label_db/B2N_k400/$rephrased_file \
+    DATA.INDEX_LABEL_MAPPING_FILE $ROOT/zs_label_db/B2N_k400/$rephrased_file \
     TRAIN.ENABLE False \
     OUTPUT_DIR $OUT_DIR \
     TEST.BATCH_SIZE 480 \
@@ -372,7 +372,6 @@ This repository is built upon [`OpenVCLIP`](https://github.com/wengzejia1/Open-V
   title={FROSTER: Frozen CLIP is a Strong Teacher for Open-Vocabulary Action Recognition},
   author={Xiaohu Huang and Hao Zhou and Kun Yao and Kai Han},
   booktitle={International Conference on Learning Representations},
-  year={2024},
-  url={https://openreview.net/pdf?id=zYXFMeHRtO}
+  year={2024}
 }
 ```
