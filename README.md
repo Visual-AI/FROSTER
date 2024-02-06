@@ -8,7 +8,11 @@ Xiaohu Huang, Hao Zhou, Kun Yao, Kai Han
 
 # Introduction
 
-https://github.com/Visual-AI/FROSTER/assets/32011994/9f639923-864c-4b61-a8cb-1542abddce39
+
+
+https://github.com/Visual-AI/FROSTER/assets/32011994/1c0bc58b-a542-4ce5-8636-49b6c3c970e7
+
+
 
 
 This paper introduces FROSTER, an effective framework for open-vocabulary action recognition. The overall pipeline of FROSTER consists of two key components, namely, model finetuning to bridge the gap between image and video tasks, and knowledge distillation to maintain the generalizability of the pretrained CLIP.
