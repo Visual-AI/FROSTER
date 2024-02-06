@@ -4,7 +4,7 @@
 
 Xiaohu Huang, Hao Zhou, Kun Yao, Kai Han
 
- [[`Paper`]](https://openreview.net/pdf?id=zYXFMeHRtO)
+ [[`Paper`]]([https://openreview.net/pdf?id=zYXFMeHRtO](https://arxiv.org/abs/2402.03241))
 
 # Introduction
 
