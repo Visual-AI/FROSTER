@@ -4,7 +4,7 @@
 
 Xiaohu Huang, Hao Zhou, Kun Yao, Kai Han
 
- [[`Paper`]]([https://arxiv.org/abs/2402.03241])
+ [[`Paper`]](https://arxiv.org/abs/2402.03241)
 
 # Introduction
 
