@@ -31,5 +31,4 @@ python -W ignore -u tools/run_net.py \
     TEST.NUM_ENSEMBLE_VIEWS 3 \
     TEST.NUM_SPATIAL_CROPS 1 \
     TEST.PATCHING_MODEL False \
-    TEST.PATCHING_RATIO $PATCHING_RATIO \
     TEST.CLIP_ORI_PATH /root/.cache/clip/ViT-B-16.pt \
