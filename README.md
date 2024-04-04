@@ -17,6 +17,10 @@ https://github.com/Visual-AI/FROSTER/assets/32011994/1c0bc58b-a542-4ce5-8636-49b
 
 This paper introduces FROSTER, an effective framework for open-vocabulary action recognition. The overall pipeline of FROSTER consists of two key components, namely, model finetuning to bridge the gap between image and video tasks, and knowledge distillation to maintain the generalizability of the pretrained CLIP.
 
+# License
+
+Froster is released under the [`CC BY-NC-SA 4.0 license`](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
 # Performance
 
 We conduct experiments on two open-vocabulary settings, i.e., base-to-novel and cross-dataset. FROSTER achieves state-of-the-art performance on both the two benchmarks.
