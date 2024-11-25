@@ -476,8 +476,8 @@ def train_epoch(
                     #     reduction='sum',
                     #     log_target=True
                     # ) * (T * T) / preds.numel()
-                    distillation_loss_1 = (img_encode - raw_img_encode).norm(p=2, dim=-1).mean()
-                    distillation_loss_2 = (text_encode - raw_text_encode).norm(p=2, dim=-1).mean()
+                    distillation_loss_1 =  1 - F.cosine_similarity(img_encode, raw_img_encode, dim=-1).mean()
+                    distillation_loss_2 =  1 - F.cosine_similarity(text_encode, raw_text_encode, dim=-1).mean()
                     distillation_loss = distillation_loss_1 + distillation_loss_2
                     # distillation_loss_2 = (mixed_img_encode - raw_img_encode).norm(p=2, dim=-1).mean()
                     # distillation_loss = distillation_loss_1 + distillation_loss_2
