@@ -18,7 +18,7 @@ TORCH_DISTRIBUTED_DEBUG=INFO python -W ignore -u tools/run_net.py \
   DATA.INDEX_LABEL_MAPPING_FILE $ROOT/label_rephrase/k400_rephrased_classes.json \
   TRAIN.ENABLE True \
   OUTPUT_DIR $CKPT/basetraining/froster \
-  TRAIN.BATCH_SIZE 32 \
+  TRAIN.BATCH_SIZE 64 \
   TEST.BATCH_SIZE 240 \
   TEST.NUM_ENSEMBLE_VIEWS 3 \
   TEST.NUM_SPATIAL_CROPS 1 \
