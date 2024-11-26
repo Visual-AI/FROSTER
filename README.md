@@ -238,7 +238,7 @@ Detailed Installation instructions can be viewed in [`INSTALL.md`](https://githu
 
 # Checkpoint
 
-The pre-trained models will be uploaded soon.
+The pre-trained model on K400 is provided at [Google Drive](https://drive.google.com/file/d/1PzlGbx1664oHDrqwdAKsfydBRoKkb_ea/view?usp=sharing).
 
 # Training
 
